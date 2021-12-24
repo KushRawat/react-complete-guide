@@ -29,7 +29,7 @@ const ExpenseForm = () => {
     // });
   };
   const dateChangeHandler = (event) => {
-    setEnteredTitle(event.target.value);
+    setEnteredDate(event.target.value);
     // setUserInput((prevState) => {
     //   return {
     //     ...prevState,
@@ -59,7 +59,7 @@ const ExpenseForm = () => {
         <div className="new-expense__control">
           <label>Amount</label>
           <input
-            type="text"
+            type="number"
             min="0.01"
             step="0.01"
             onChange={amountChangeHandler}
