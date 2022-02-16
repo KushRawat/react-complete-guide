@@ -1,10 +1,13 @@
-import ExpenseForm from "./ExpenseForm";
-import "./NewExpense.css";
+import ExpenseForm from './ExpenseForm';
+import './NewExpense.css';
 
-const NewExpense = () => {
+const NewExpense = (props) => {
+  const saveExpenseDataHandler = (expenseData) => {
+props.onAddExpenseData(expenseData)  };
+
   return (
-    <div className="new-expense">
-      <ExpenseForm/>
+    <div className='new-expense'>
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
     </div>
   );
 };
