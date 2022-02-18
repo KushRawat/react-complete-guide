@@ -21,9 +21,8 @@ const Expenses = (props) => {
         selected={selectedYear}
         onSaveExpenseFilter={saveExpenseFilterHandler}
       />
-      {filteredExepnses.length === 0 ? (
-        <p>No expenses this year.</p>
-      ) : (
+      {filteredExepnses.length === 0 && <p>No expenses this year.</p>}
+      {filteredExepnses.length > 0 &&
         filteredExepnses.map((expense) => (
           <ExpenseItem
             key={expense.id}
@@ -31,9 +30,7 @@ const Expenses = (props) => {
             amount={expense.amount}
             date={expense.date}
           />
-        ))
-      )}
-      {}
+        ))}
     </Card>
   );
 };
